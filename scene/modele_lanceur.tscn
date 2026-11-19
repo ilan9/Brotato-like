@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://budv450xfg3ru"]
+
+[ext_resource type="Script" uid="uid://dfy6gl43cvy5y" path="res://script/modele_lanceur.gd" id="1_s1mlo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7mny"]
+radius = 53.338543
+
+[node name="modele_lanceur" type="Node2D" unique_id=802650227]
+script = ExtResource("1_s1mlo")
+
+[node name="cadence" type="Timer" parent="." unique_id=529654857]
+autostart = true
+
+[node name="radar" type="Area2D" parent="." unique_id=354482581]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="radar" unique_id=638798295]
+shape = SubResource("CircleShape2D_y7mny")
+
+[connection signal="timeout" from="cadence" to="." method="_on_cadence_timeout"]

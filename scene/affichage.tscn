@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://ccjx4gtomg08y"]
+
+[ext_resource type="Texture2D" uid="uid://73xk8dw7wpsn" path="res://asset/collectible/piece.png" id="1_kum04"]
+[ext_resource type="Script" uid="uid://dt2qqac7etpb8" path="res://script/affichage.gd" id="1_sd3sk"]
+[ext_resource type="Texture2D" uid="uid://cp77ioue8kljy" path="res://asset/collectible/xp.png" id="2_sd3sk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdj6c"]
+bg_color = Color(0, 0, 0, 0.48235294)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1122644684]
+script = ExtResource("1_sd3sk")
+
+[node name="img_xp" type="Sprite2D" parent="." unique_id=1737997361]
+position = Vector2(1087.0001, 43)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_sd3sk")
+
+[node name="xp" type="Label" parent="." unique_id=391307057]
+offset_left = 1106.0
+offset_top = 30.0
+offset_right = 1146.0
+offset_bottom = 53.0
+text = "0"
+
+[node name="Panel" type="Panel" parent="." unique_id=685986416]
+z_index = -1
+offset_left = 1065.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bdj6c")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1818646179]
+z_index = -1
+offset_left = 1066.0
+offset_top = 30.0
+offset_right = 1151.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bdj6c")
+
+[node name="img_piece" type="Sprite2D" parent="." unique_id=25870224]
+position = Vector2(1086, 15)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_kum04")
+
+[node name="piece" type="Label" parent="." unique_id=1239594726]
+offset_left = 1105.0
+offset_top = 2.0
+offset_right = 1145.0
+offset_bottom = 25.0
+text = "0"

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bx7ad6opn7uw6"]
+
+[ext_resource type="Texture2D" uid="uid://csdga2uy1yuop" path="res://asset/boutique/Icons_sort/fire_ball.png" id="1_4dva7"]
+[ext_resource type="Script" uid="uid://1mh4nndx1xkd" path="res://scene/carte_boutique.gd" id="2_hyjlw"]
+
+[node name="carte_boutique" type="ColorRect" unique_id=672380302]
+z_index = -2
+custom_minimum_size = Vector2(195, 325)
+offset_right = 192.0
+offset_bottom = 324.0
+color = Color(1, 1, 1, 0.57254905)
+script = ExtResource("2_hyjlw")
+
+[node name="nom" type="Label" parent="." unique_id=1945982938]
+z_index = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 7.0
+offset_right = 188.0
+offset_bottom = 30.0
+text = "Fire_Ball"
+horizontal_alignment = 1
+
+[node name="image" type="TextureRect" parent="." unique_id=1146624118]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 38.0
+offset_right = 155.0
+offset_bottom = 144.0
+texture = ExtResource("1_4dva7")
+
+[node name="type" type="Label" parent="." unique_id=899038025]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 171.0
+offset_right = 191.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 12
+text = "Type : Projectile"
+
+[node name="element" type="Label" parent="." unique_id=872470929]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 150.0
+offset_right = 189.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 12
+text = "Element : Feu"
+
+[node name="stat" type="Label" parent="." unique_id=375381660]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 190.0
+offset_right = 165.0
+offset_bottom = 272.0
+theme_override_colors/font_color = Color(0.35, 0.35, 0.35, 1)
+theme_override_font_sizes/font_size = 10
+text = "Statisiques
+Effet : mouillé
+Degat : 72
+Portée : 300
+Cadence : 2 sec"
+
+[node name="achat" type="Button" parent="." unique_id=1319389463]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 273.0
+offset_right = 140.0
+offset_bottom = 313.0
+text = "prix"

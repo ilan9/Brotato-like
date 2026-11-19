@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://c4xmheu17kfqf"]
+
+[ext_resource type="Script" uid="uid://blfj4cuwbs55u" path="res://script/player.gd" id="1_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://caeun0rslmqhx" path="res://asset/character/mage.png" id="1_xo3ru"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
+radius = 72.0
+height = 278.0
+
+[sub_resource type="Animation" id="Animation_hjaqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fvtld"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ct4mp"]
+_data = {
+&"RESET": SubResource("Animation_hjaqi"),
+&"idle": SubResource("Animation_fvtld")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
+radius = 2469.3552
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
+radius = 155.55554
+
+[node name="player" type="CharacterBody2D" unique_id=386795903 groups=["joueur"]]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(489, 270)
+scale = Vector2(0.45, 0.45)
+script = ExtResource("1_hjaqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630256840]
+position = Vector2(-4, -30)
+scale = Vector2(0.45, 0.45)
+shape = SubResource("CapsuleShape2D_hjaqi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=4181149]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_xo3ru")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1995723190]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_ct4mp")
+autoplay = &"idle"
+
+[node name="radar" type="Area2D" parent="." unique_id=1665959933]
+light_mask = 2
+visibility_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="radar" unique_id=37263933]
+scale = Vector2(0.45, 0.45)
+shape = SubResource("CircleShape2D_hjaqi")
+
+[node name="cadence" type="Timer" parent="." unique_id=2070275811 groups=["joueur"]]
+autostart = true
+
+[node name="Arsenal" type="Node2D" parent="." unique_id=1378287134]
+
+[node name="collecteur" type="Area2D" parent="." unique_id=121389577]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collecteur" unique_id=820507057]
+position = Vector2(0, -33.333336)
+shape = SubResource("CircleShape2D_fvtld")
+
+[connection signal="timeout" from="cadence" to="." method="_on_cadence_timeout"]
+[connection signal="area_entered" from="collecteur" to="." method="_on_collecteur_area_entered"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ElementStatistiques" format=3 uid="uid://kmybaar4gh8i"]
+
+[ext_resource type="Script" uid="uid://dyk01k7sjwfq" path="res://sort/element_stat.gd" id="1_wbu8l"]
+
+[resource]
+script = ExtResource("1_wbu8l")
+nom_element = "Eau"
+couleur = Color(0.089339755, 0.5741989, 0.8565907, 1)
+degats_bonus = 0.8
+nom_etat = "Ralentit"
+metadata/_custom_type_script = "uid://dyk01k7sjwfq"

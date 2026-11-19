@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TypeSort" format=3 uid="uid://d04wqkpu07k31"]
+
+[ext_resource type="PackedScene" uid="uid://c1us0sek3uajy" path="res://sort/type/projectile.tscn" id="1_08lk4"]
+[ext_resource type="Script" uid="uid://c13q1l1yvckkh" path="res://sort/type/type_sort.gd" id="1_jyfia"]
+
+[resource]
+script = ExtResource("1_jyfia")
+nom = "projectile"
+degat = 10.0
+portee = 400.0
+cadence = 0.6
+prix_base = 15
+scene_associee = ExtResource("1_08lk4")
+metadata/_custom_type_script = "uid://c13q1l1yvckkh"

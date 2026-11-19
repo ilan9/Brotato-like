@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ElementStatistiques" format=3 uid="uid://vxq061bp7bw3"]
+
+[ext_resource type="Script" uid="uid://dyk01k7sjwfq" path="res://sort/element_stat.gd" id="1_xvp11"]
+
+[resource]
+script = ExtResource("1_xvp11")
+nom_element = "Terre"
+couleur = Color(0.26065508, 0.14627916, 0.0060983826, 1)
+degats_bonus = 0.9
+nom_etat = "Pétrifié"
+metadata/_custom_type_script = "uid://dyk01k7sjwfq"

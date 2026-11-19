@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://32wffa3vy6md"]
+
+[ext_resource type="Script" uid="uid://c686rj8e6pflm" path="res://script/boutique.gd" id="1_m4488"]
+
+[node name="Boutique" type="CanvasLayer" unique_id=1507796995]
+script = ExtResource("1_m4488")
+
+[node name="Control" type="Control" parent="." unique_id=970933857]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1081697480]
+z_index = -25
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 645.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1939574212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rayon" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1821565713]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 13
+
+[node name="Raffraichir" type="Button" parent="Control/VBoxContainer/Rayon" unique_id=1127395498]
+layout_mode = 2
+text = "Raffraichir"
+
+[node name="Equiped" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=93555291]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 13
+
+[node name="pret" type="Button" parent="Control/VBoxContainer/Equiped" unique_id=198535075]
+layout_mode = 2
+text = "Prêt"
+
+[connection signal="pressed" from="Control/VBoxContainer/Rayon/Raffraichir" to="." method="_on_raffraichir_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Equiped/pret" to="." method="_on_pret_pressed"]

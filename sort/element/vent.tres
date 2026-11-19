@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ElementStatistiques" format=3 uid="uid://dwgvxgns4vja4"]
+
+[ext_resource type="Script" uid="uid://dyk01k7sjwfq" path="res://sort/element_stat.gd" id="1_17apr"]
+
+[resource]
+script = ExtResource("1_17apr")
+nom_element = "Vent"
+couleur = Color(0.8672408, 0.995457, 0.72441584, 1)
+degats_bonus = 0.7
+nom_etat = "Repoussé"
+metadata/_custom_type_script = "uid://dyk01k7sjwfq"

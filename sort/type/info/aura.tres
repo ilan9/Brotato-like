@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TypeSort" format=3 uid="uid://cdnw8xaobga23"]
+
+[ext_resource type="PackedScene" uid="uid://ik6sykk60ilu" path="res://sort/type/aura.tscn" id="1_trubt"]
+[ext_resource type="Script" uid="uid://c13q1l1yvckkh" path="res://sort/type/type_sort.gd" id="2_pm3lg"]
+
+[resource]
+script = ExtResource("2_pm3lg")
+nom = "aura"
+degat = 4.0
+portee = 900.0
+cadence = 1.0
+prix_base = 45
+scene_associee = ExtResource("1_trubt")
+metadata/_custom_type_script = "uid://c13q1l1yvckkh"

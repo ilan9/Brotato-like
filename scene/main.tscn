@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b80rog0coym66"]
+
+[ext_resource type="Script" uid="uid://b8pnc47tc477j" path="res://script/main.gd" id="1_brvut"]
+[ext_resource type="PackedScene" uid="uid://lxivocownok0" path="res://scene/mob.tscn" id="1_v0l8b"]
+[ext_resource type="PackedScene" uid="uid://c4xmheu17kfqf" path="res://scene/player.tscn" id="2_wp4xf"]
+[ext_resource type="Script" uid="uid://ce0anm6llpcxv" path="res://script/generateur.gd" id="3_wp4xf"]
+[ext_resource type="PackedScene" uid="uid://32wffa3vy6md" path="res://scene/boutique.tscn" id="5_0ha60"]
+[ext_resource type="PackedScene" uid="uid://ccjx4gtomg08y" path="res://scene/affichage.tscn" id="6_4j5ol"]
+[ext_resource type="PackedScene" uid="uid://0jqon8i7pl3k" path="res://scene/loot.tscn" id="8_of57s"]
+
+[sub_resource type="Curve2D" id="Curve2D_wp4xf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -96, -97, 0, 0, 0, 0, 1256, -84, 0, 0, 0, 0, 1252, 727, 0, 0, 0, 0, -110, 729, 0, 0, 0, 0, -116, -93, 0, 0, 0, 0, -96, -97)
+}
+point_count = 6
+
+[node name="main" type="Node2D" unique_id=1861301897]
+script = ExtResource("1_brvut")
+
+[node name="mob" parent="." unique_id=1579538932 instance=ExtResource("1_v0l8b")]
+position = Vector2(405, 304)
+scale = Vector2(1.2, 1.2)
+
+[node name="player" parent="." unique_id=386795903 instance=ExtResource("2_wp4xf")]
+unique_name_in_owner = true
+position = Vector2(549, 318)
+
+[node name="generateur" type="Node2D" parent="." unique_id=473463538]
+unique_name_in_owner = true
+script = ExtResource("3_wp4xf")
+
+[node name="Timer" type="Timer" parent="generateur" unique_id=461617694]
+wait_time = 0.5
+autostart = true
+
+[node name="Vague" type="Label" parent="generateur" unique_id=1988514849]
+visible = false
+offset_right = 1150.0
+offset_bottom = 651.0
+theme_override_font_sizes/font_size = 114
+text = "Vague x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="deb_vague" type="Label" parent="generateur" unique_id=772438980]
+visible = false
+offset_right = 1150.0
+offset_bottom = 651.0
+theme_override_font_sizes/font_size = 114
+text = "Vague x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1604458792]
+curve = SubResource("Curve2D_wp4xf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1220498167]
+position = Vector2(-96, -97)
+rotation = 0.009615089
+
+[node name="Boutique" parent="." unique_id=1507796995 instance=ExtResource("5_0ha60")]
+unique_name_in_owner = true
+visible = false
+
+[node name="affichage" parent="." unique_id=1122644684 instance=ExtResource("6_4j5ol")]
+unique_name_in_owner = true
+
+[node name="loot" parent="." unique_id=1507477436 instance=ExtResource("8_of57s")]
+visible = false
+position = Vector2(-413, 179)
+
+[connection signal="fin_vague" from="generateur" to="." method="_on_generateur_fin_vague"]
+[connection signal="timeout" from="generateur/Timer" to="generateur" method="_on_timer_timeout"]
+[connection signal="joueur_pret" from="Boutique" to="." method="_on_boutique_joueur_pret"]

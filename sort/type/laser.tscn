@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3mhuaevq7hpw"]
+
+[ext_resource type="PackedScene" uid="uid://c1us0sek3uajy" path="res://sort/type/projectile.tscn" id="1_p54dw"]
+[ext_resource type="Script" uid="uid://de4haun3m8prg" path="res://sort/type/laser.gd" id="2_fqh88"]
+
+[node name="laser" unique_id=210045037 instance=ExtResource("1_p54dw")]
+script = ExtResource("2_fqh88")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=1489188479]
+position = Vector2(576, 323)
+scale = Vector2(62.02187, 36.444206)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ElementStatistiques" format=3 uid="uid://cfypqa263iq3g"]
+
+[ext_resource type="Script" uid="uid://dyk01k7sjwfq" path="res://sort/element_stat.gd" id="1_6mwuk"]
+
+[resource]
+script = ExtResource("1_6mwuk")
+nom_element = "Foudre"
+couleur = Color(0.56928635, 0.40532076, 1, 1)
+nom_etat = "Elécrtifié"
+metadata/_custom_type_script = "uid://dyk01k7sjwfq"

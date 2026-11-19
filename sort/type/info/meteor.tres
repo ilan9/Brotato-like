@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TypeSort" format=3 uid="uid://b3n4p1j13xvkc"]
+
+[ext_resource type="PackedScene" uid="uid://cm8mt8opm3rt0" path="res://sort/type/meteor.tscn" id="1_emuwq"]
+[ext_resource type="Script" uid="uid://c13q1l1yvckkh" path="res://sort/type/type_sort.gd" id="2_xirwy"]
+
+[resource]
+script = ExtResource("2_xirwy")
+nom = "meteor"
+degat = 40.0
+portee = 800.0
+cadence = 4.0
+prix_base = 65
+scene_associee = ExtResource("1_emuwq")
+metadata/_custom_type_script = "uid://c13q1l1yvckkh"

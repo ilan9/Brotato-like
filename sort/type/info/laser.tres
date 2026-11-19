@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TypeSort" format=3 uid="uid://bhqweeqkub5kg"]
+
+[ext_resource type="PackedScene" uid="uid://d3mhuaevq7hpw" path="res://sort/type/laser.tscn" id="1_411yv"]
+[ext_resource type="Script" uid="uid://c13q1l1yvckkh" path="res://sort/type/type_sort.gd" id="2_y07ls"]
+
+[resource]
+script = ExtResource("2_y07ls")
+nom = "laser"
+degat = 6.0
+portee = 600.0
+cadence = 0.8
+prix_base = 25
+scene_associee = ExtResource("1_411yv")
+metadata/_custom_type_script = "uid://c13q1l1yvckkh"

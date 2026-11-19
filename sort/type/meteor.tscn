@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cm8mt8opm3rt0"]
+
+[ext_resource type="Script" uid="uid://bdceeo70jywr6" path="res://sort/type/meteor.gd" id="1_nf1qt"]
+[ext_resource type="Texture2D" uid="uid://bt0gkbn5lmxul" path="res://asset/sort/meteor.png" id="2_nf1qt"]
+
+[node name="meteor" type="Area2D" unique_id=94163471]
+rotation = 0.9948377
+scale = Vector2(5, 5)
+script = ExtResource("1_nf1qt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=320449358]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_nf1qt")

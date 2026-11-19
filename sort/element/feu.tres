@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ElementStatistiques" format=3 uid="uid://ixmceq5d6mho"]
+
+[ext_resource type="Script" uid="uid://dyk01k7sjwfq" path="res://sort/element_stat.gd" id="1_4nano"]
+
+[resource]
+script = ExtResource("1_4nano")
+nom_element = "Feu"
+couleur = Color(1, 0.08627451, 0.16470589, 1)
+degats_bonus = 1.2
+nom_etat = "Brûler"
+metadata/_custom_type_script = "uid://dyk01k7sjwfq"
